@@ -47,7 +47,7 @@ bool Chessboard::GetSubmit(const ChessPoint& cp,int id)
 		return false;
 	}
 
-	cb[cp.x*width+cp.y]=id;
+	cb[cp.x+cp.y*width]=id;
 	sum++;
 	return true;
 }
@@ -55,7 +55,7 @@ int Chessboard::GetIdOfPoint(const ChessPoint& cp)const
 {
 	if (isPointValid(cp))
 	{
-		return cb[cp.x*width+cp.y];
+		return cb[cp.x+cp.y*width];
 	}
 	return -1;
 }
